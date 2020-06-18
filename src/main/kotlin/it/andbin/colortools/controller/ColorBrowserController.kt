@@ -45,6 +45,7 @@ class ColorBrowserController {
             addObject("title", "CSS Colors")
             addObject("specs", CssSpecification.values())
             addObject("colorPalette", colorPaletteOut)
+            addObject("totalColors", colorPalette.colorsCount)
         }
     }
 

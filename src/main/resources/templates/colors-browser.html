@@ -59,7 +59,15 @@
     </fieldset>
 </form>
 
-<h2 th:text="${colorPalette.name}">Title</h2>
+<h2>
+    <span th:id="palette_name" th:text="${colorPalette.name}">Name</span>
+    <span th:if="${colorPalette.colorsCount} == ${totalColors}"
+          th:id="all_colors_count"
+          th:text="|${totalColors} colors|"></span>
+    <span th:if="${colorPalette.colorsCount} != ${totalColors}"
+          th:id="partial_colors_count"
+          th:text="|${colorPalette.colorsCount} of ${totalColors} colors|"></span>
+</h2>
 
 <table id="colors_table">
     <tr>

@@ -9,6 +9,8 @@
 package it.andbin.colortools.model
 
 class ColorPalette(val name: String, val colors: List<Color>) {
+    val colorsCount = colors.size
+
     fun filterAndSort(predicate: ((Color) -> Boolean)?, comparator: Comparator<Color>?): ColorPalette {
         val filteredColors = if (predicate != null) colors.filter(predicate) else colors
         val sortedColors = if (comparator != null) filteredColors.sortedWith(comparator) else filteredColors

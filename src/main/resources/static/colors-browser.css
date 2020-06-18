@@ -1,3 +1,28 @@
+#palette_name {
+    vertical-align: middle;
+}
+
+#all_colors_count,
+#partial_colors_count {
+    font-size: 65%;
+    padding: 0.25em 0.45em 0.25em 0.45em;
+    border-radius: 100px;
+    margin-left: 1em;
+    vertical-align: middle;
+}
+
+#all_colors_count {
+    color: black;
+    background: #D0FFD0;
+    border: 1.5px solid #80D080;
+}
+
+#partial_colors_count {
+    color: black;
+    background: #FFFFD0;
+    border: 1.5px solid #D0D080;
+}
+
 #colors_table {
     border: 1px solid black;
     border-collapse: collapse;
