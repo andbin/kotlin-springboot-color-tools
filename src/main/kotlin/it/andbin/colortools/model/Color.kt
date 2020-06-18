@@ -47,6 +47,6 @@ open class Color(red: Int, green: Int, blue: Int, val name: String = "") {
         fun initialNamePredicate(name: String) = { color: Color -> color.name.startsWith(name, true) }
         fun finalNamePredicate(name: String) = { color: Color -> color.name.endsWith(name, true) }
 
-        fun of(name: String, rgbVal: Int) = Color(rgbVal shr 16, rgbVal shr 8, rgbVal, name)
+        fun of(rrggbb: Int, name: String = "") = Color(rrggbb shr 16, rrggbb shr 8, rrggbb, name)
     }
 }
