@@ -1,0 +1,53 @@
+#colors_table {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+#colors_table th {
+    font-size: 80%;
+    font-weight: bold;
+    text-align: left;
+    background: #F6F6F6;
+    padding: 0.3em 0.45em 0.3em 0.45em;
+    border: 1px solid black;
+}
+
+#colors_table td {
+    vertical-align: middle;
+    border: 1px solid black;
+    padding: 0.3em 0.45em 0.3em 0.45em;
+}
+
+#colors_table td.index {
+    font-size: 78%;
+    text-align: right;
+    color: gray;
+}
+
+#colors_table td.sample {
+    padding: 0.25em;
+}
+
+#colors_table td.sample span {
+    vertical-align: middle;
+    display: block;
+    width: 3.5em;
+    height: 1.5em;
+    border: 1px solid gray;
+    margin: 0;
+}
+
+#colors_table td.red,
+#colors_table td.green,
+#colors_table td.blue {
+    width: 2.3em;
+}
+
+#colors_table td.name,
+#colors_table td.red,
+#colors_table td.green,
+#colors_table td.blue,
+#colors_table td.hex,
+#colors_table td.rgb {
+    font-family: consolas,"Liberation Mono",courier,monospace;
+}

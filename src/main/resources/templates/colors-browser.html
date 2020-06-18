@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html th:lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" th:href="@{/reset.css}" type="text/css">
+    <link rel="stylesheet" th:href="@{/global.css}" type="text/css">
+    <link rel="stylesheet" th:href="@{/colors-browser.css}" type="text/css">
+    <title th:text="${title} + ' &ndash; Kotlin+SpringBoot Color Tools'"></title>
+</head>
+<body>
+
+<h1><span class="l1" th:text="${title}"></span> &ndash; <span class="l2">Kotlin+SpringBoot Color Tools</span></h1>
+
+<form id="colors_filter" method="get" th:object="${form}">
+    <fieldset>
+        <legend>Filter</legend>
+
+        <span class="field-block">
+            <label id="specLabel" for="spec">Spec:</label>
+            <select id="spec" name="spec">
+                <option th:each="spec : ${specs}"
+                        th:value="${spec.code}"
+                        th:text="${spec.desc}"
+                        th:selected="(${spec} == *{spec})">
+                </option>
+            </select>
+        </span>
+
+        <span class="field-block">
+            <label id="nameFilterLabel" for="nameFilter">Name:</label>
+            <input id="nameFilter" name="nameFilter" type="text" size="16" th:value="*{nameFilter}">
+        </span>
+
+        <span class="field-block">
+            <label id="nameMatchModeLabel" for="nameMatchMode">Match:</label>
+            <select id="nameMatchMode" name="nameMatchMode">
+                <option th:each="mode : ${colorNameMatchModes}"
+                        th:value="${mode.code}"
+                        th:text="${mode.desc}"
+                        th:selected="(${mode} == *{nameMatchMode})">
+                </option>
+            </select>
+        </span>
+
+        <span class="field-block">
+            <label id="sortModeLabel" for="sortMode">Sort by:</label>
+            <select id="sortMode" name="sortMode">
+                <option th:each="mode : ${colorSortModes}"
+                        th:value="${mode.code}"
+                        th:text="${mode.desc}"
+                        th:selected="(${mode} == *{sortMode})">
+                </option>
+            </select>
+        </span>
+
+        <span class="field-block">
+            <input id="apply" type="submit" value="APPLY">
+        </span>
+    </fieldset>
+</form>
+
+<h2 th:text="${colorPalette.name}">Title</h2>
+
+<table id="colors_table">
+    <tr>
+        <th class="index"></th>
+        <th class="sample"></th>
+        <th class="name">Name</th>
+        <th class="red">Red</th>
+        <th class="green">Green</th>
+        <th class="blue">Blue</th>
+        <th class="hex">Hex</th>
+        <th class="rgb">RGB</th>
+    </tr>
+    <tr th:each="color : ${colorPalette.colors}">
+        <td class="index" th:text="${colorStat.count}"></td>
+        <td class="sample"><span th:style="'background:'+${color.name}"></span></td>
+        <td class="name" th:text="${color.name}">Name</td>
+        <td class="red" th:text="${color.red}">Red</td>
+        <td class="green" th:text="${color.green}">Green</td>
+        <td class="blue" th:text="${color.blue}">Blue</td>
+        <td class="hex" th:text="${color.hex}">HEX</td>
+        <td class="rgb" th:text="${color.rgb}">RGB</td>
+    </tr>
+</table>
+
+<div id="footer">Kotlin+SpringBoot (and Thymeleaf) demo application for some Color Tools &ndash; by <a href="https://andbin.it">andbin</a></div>
+
+</body>
+</html>
