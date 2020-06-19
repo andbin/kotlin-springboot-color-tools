@@ -8,7 +8,6 @@
 
 package it.andbin.colortools.controller
 
-import it.andbin.colortools.model.ColorFilterData
 import it.andbin.colortools.model.ColorNameMatchMode
 import it.andbin.colortools.model.ColorSortMode
 import it.andbin.colortools.model.css.CssColorFilterData

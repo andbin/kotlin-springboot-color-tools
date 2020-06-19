@@ -8,7 +8,6 @@
 
 package it.andbin.colortools.config
 
-import it.andbin.colortools.model.ColorSortMode
 import it.andbin.colortools.model.css.CssSpecification
 import org.springframework.core.convert.converter.Converter
 import org.springframework.stereotype.Component
