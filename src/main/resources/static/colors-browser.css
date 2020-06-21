@@ -3,7 +3,8 @@
 }
 
 #all_colors_count,
-#partial_colors_count {
+#partial_colors_count,
+#zero_colors_count {
     font-size: 65%;
     padding: 0.25em 0.45em 0.25em 0.45em;
     border-radius: 100px;
@@ -21,6 +22,12 @@
     color: black;
     background: #FFFFD0;
     border: 1.5px solid #D0D080;
+}
+
+#zero_colors_count {
+    color: black;
+    background: #FFE0E0;
+    border: 1.5px solid #E08080;
 }
 
 #colors_table {

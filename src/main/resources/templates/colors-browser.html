@@ -16,7 +16,7 @@
         <legend>Filter</legend>
 
         <span class="field-block">
-            <label id="specLabel" for="spec">Spec:</label>
+            <label id="spec_label" for="spec">Spec:</label>
             <select id="spec" name="spec">
                 <option th:each="spec : ${specs}"
                         th:value="${spec.code}"
@@ -27,13 +27,13 @@
         </span>
 
         <span class="field-block">
-            <label id="nameFilterLabel" for="nameFilter">Name:</label>
-            <input id="nameFilter" name="nameFilter" type="text" size="16" th:value="*{nameFilter}">
+            <label id="name_filter_label" for="name_filter">Name:</label>
+            <input id="name_filter" name="nameFilter" type="text" size="16" th:value="*{nameFilter}">
         </span>
 
         <span class="field-block">
-            <label id="nameMatchModeLabel" for="nameMatchMode">Match:</label>
-            <select id="nameMatchMode" name="nameMatchMode">
+            <label id="name_match_mode_label" for="name_match_mode">Match:</label>
+            <select id="name_match_mode" name="nameMatchMode">
                 <option th:each="mode : ${colorNameMatchModes}"
                         th:value="${mode.code}"
                         th:text="${mode.desc}"
@@ -43,8 +43,8 @@
         </span>
 
         <span class="field-block">
-            <label id="sortModeLabel" for="sortMode">Sort by:</label>
-            <select id="sortMode" name="sortMode">
+            <label id="sort_mode_label" for="sort_mode">Sort by:</label>
+            <select id="sort_mode" name="sortMode">
                 <option th:each="mode : ${colorSortModes}"
                         th:value="${mode.code}"
                         th:text="${mode.desc}"
@@ -54,7 +54,7 @@
         </span>
 
         <span class="field-block">
-            <input id="apply" type="submit" value="APPLY">
+            <input id="apply_button" type="submit" value="APPLY">
         </span>
     </fieldset>
 </form>
@@ -64,12 +64,15 @@
     <span th:if="${colorPalette.colorsCount} == ${totalColors}"
           th:id="all_colors_count"
           th:text="|${totalColors} colors|"></span>
-    <span th:if="${colorPalette.colorsCount} != ${totalColors}"
+    <span th:if="${colorPalette.colorsCount} != ${totalColors} and ${colorPalette.colorsCount} > 0"
           th:id="partial_colors_count"
           th:text="|${colorPalette.colorsCount} of ${totalColors} colors|"></span>
+    <span th:if="${colorPalette.colorsCount} != ${totalColors} and ${colorPalette.colorsCount} == 0"
+          th:id="zero_colors_count"
+          th:text="|0 of ${totalColors} colors|"></span>
 </h2>
 
-<table id="colors_table">
+<table id="colors_table" th:if="${colorPalette.colorsCount} > 0">
     <tr>
         <th class="index"></th>
         <th class="sample"></th>
