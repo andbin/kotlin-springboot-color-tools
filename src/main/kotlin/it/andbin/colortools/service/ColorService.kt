@@ -17,7 +17,7 @@ import org.springframework.stereotype.Service
 
 @Service
 class ColorService {
-    fun applyFilter(colorPalette: ColorPalette, filterData: ColorFilterData): ColorPalette {
+    fun filterColorPalette(colorPalette: ColorPalette, filterData: ColorFilterData): ColorPalette {
         val nameFilter = filterData.nameFilter
 
         val predicate = if (nameFilter.isEmpty()) null else

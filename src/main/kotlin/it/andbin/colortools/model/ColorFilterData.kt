@@ -8,9 +8,8 @@
 
 package it.andbin.colortools.model
 
-open class ColorFilterData {
-    var nameFilter: String = ""
-        set(value) { field = value.trim() }
-    var nameMatchMode: ColorNameMatchMode = ColorNameMatchMode.PARTIAL
-    var sortMode: ColorSortMode = ColorSortMode.NAME_ASCENDING
-}
+class ColorFilterData(
+    val nameFilter: String,
+    val nameMatchMode: ColorNameMatchMode,
+    val sortMode: ColorSortMode
+)
